@@ -1,3 +1,6 @@
+#include <QDebug>
+#include <QMessageBox>
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -6,9 +9,21 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("Syslog Logger");
+    QMenu *helpMenu = menuBar()->addMenu(tr("&Help"));
+    QAction *aboutAct = helpMenu->addAction(tr("&About"), this, &MainWindow::about);
+    aboutAct->setStatusTip(tr("Show the application's About box"));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::about()
+{
+    QMessageBox::about(this, tr("About Syslog Logger"),
+                             tr("The <b>Syslog Logger</b> demonstrates how to "
+                             "write modern GUI applications using Qt. "
+                             "Credits: Icon made by ... from ..."));
 }
