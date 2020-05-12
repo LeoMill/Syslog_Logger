@@ -17,6 +17,7 @@ public:
 
 private slots:
     void about();
+    void setting();
 
 private:
     Ui::MainWindow *ui;
