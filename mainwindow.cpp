@@ -1,6 +1,7 @@
 #include <QDebug>
 #include <QMessageBox>
 
+#include "app_setting.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -34,5 +35,6 @@ void MainWindow::about()
 
 void MainWindow::setting()
 {
-    ;
+    App_Setting *setting = new App_Setting;
+    setting->show();
 }
