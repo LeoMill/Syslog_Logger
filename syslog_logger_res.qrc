@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Pic/ico.png</file>
+        <file>Pic/visualsyslog.ico</file>
+    </qresource>
+</RCC>
