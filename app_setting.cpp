@@ -3,7 +3,8 @@
 
 #include "app_setting.h"
 
-App_Setting::App_Setting()
+App_Setting::App_Setting(QWidget *parent) : QDialog(parent)
+
 {
     QTabWidget *tab_widget = new QTabWidget;
     tab_widget->addTab(new QWidget(),tr("Main"));

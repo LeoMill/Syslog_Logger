@@ -35,6 +35,6 @@ void MainWindow::about()
 
 void MainWindow::setting()
 {
-    App_Setting *setting = new App_Setting;
+    App_Setting *setting = new App_Setting(this);
     setting->show();
 }

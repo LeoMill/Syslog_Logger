@@ -9,7 +9,7 @@ class App_Setting : public QDialog
     Q_OBJECT
 public:
     //App_Setting();
-    explicit App_Setting();
+    explicit App_Setting(QWidget *parent = nullptr);
     ~App_Setting();
 
 private slots:
