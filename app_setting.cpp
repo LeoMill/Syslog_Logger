@@ -16,6 +16,7 @@ App_Setting::App_Setting(QWidget *parent) : QDialog(parent)
     setLayout(mainLayout);
     setWindowTitle("Setup");
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    resize(800, 600);
 }
 
 App_Setting::~App_Setting()
