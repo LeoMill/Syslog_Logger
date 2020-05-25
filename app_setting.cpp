@@ -4,7 +4,6 @@
 #include "app_setting.h"
 
 App_Setting::App_Setting(QWidget *parent) : QDialog(parent)
-
 {
     tab_widget_ = new QTabWidget;
     tab_main_ = new QWidget;
@@ -30,14 +29,28 @@ App_Setting::App_Setting(QWidget *parent) : QDialog(parent)
     set_main_layout_->addWidget(cb_hightlight_3d_, 2, 0);
     set_main_layout_->addWidget(cb_raw_, 3, 0);
     tab_main_->setLayout(set_main_layout_);
-    memset((void*)&setup_info_, 0, sizeof(Setup_Info_s));
+    memset(&setup_info_, 0, sizeof(Setup_Info_s));
+}
+
+void App_Setting::closeEvent(QCloseEvent *e)
+{
+    if(Qt::Checked == cb_udp_->checkState())
+        setup_info_.Enable_Bitmask |= ENABLE_UDP_LISTEN;
+
+    if(Qt::Checked == cb_tcp_->checkState())
+        setup_info_.Enable_Bitmask |= ENABLE_TCP_LISTEN;
+
+    if(Qt::Checked == cb_hightlight_3d_->checkState())
+        setup_info_.Enable_Bitmask |= ENABLE_HL_3D;
+
+    if(Qt::Checked == cb_raw_->checkState())
+        setup_info_.Enable_Bitmask |= ENABLE_RAW_FILE;
 }
 
 App_Setting::~App_Setting()
 {
     delete tab_file_;
     delete tab_mail_;
-
     delete cb_udp_;
     delete cb_tcp_;
     delete cb_hightlight_3d_;
