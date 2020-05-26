@@ -32,7 +32,7 @@ App_Setting::App_Setting(QWidget *parent) : QDialog(parent)
     memset(&setup_info_, 0, sizeof(Setup_Info_s));
 }
 
-void App_Setting::closeEvent(QCloseEvent *e)
+void App_Setting::closeEvent(QCloseEvent *event)
 {
     if(Qt::Checked == cb_udp_->checkState())
         setup_info_.Enable_Bitmask |= ENABLE_UDP_LISTEN;
@@ -45,6 +45,8 @@ void App_Setting::closeEvent(QCloseEvent *e)
 
     if(Qt::Checked == cb_raw_->checkState())
         setup_info_.Enable_Bitmask |= ENABLE_RAW_FILE;
+
+    this->QDialog::closeEvent(event);
 }
 
 App_Setting::~App_Setting()

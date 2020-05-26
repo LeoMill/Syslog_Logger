@@ -34,7 +34,7 @@ private slots:
 
 private:
     // override
-    void closeEvent(QCloseEvent *e);
+    void closeEvent(QCloseEvent *event);
 
     QTabWidget *tab_widget_ = nullptr;
     QWidget *tab_main_ = nullptr, *tab_file_ = nullptr, *tab_mail_ = nullptr;
