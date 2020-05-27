@@ -47,6 +47,7 @@ void App_Setting::closeEvent(QCloseEvent *event)
         setup_info_.Enable_Bitmask |= ENABLE_RAW_FILE;
 
     this->QDialog::closeEvent(event);
+    accept();
 }
 
 App_Setting::~App_Setting()

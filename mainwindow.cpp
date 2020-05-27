@@ -35,6 +35,12 @@ void MainWindow::about()
 
 void MainWindow::setting()
 {
+    int value;
+
     App_Setting *setting = new App_Setting(this);
-    setting->exec();
+    value = setting->exec();
+    if(value)
+    {
+        setting->~App_Setting();
+    }
 }
