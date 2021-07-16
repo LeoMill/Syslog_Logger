@@ -29,7 +29,12 @@ App_Setting::App_Setting(QWidget *parent) : QDialog(parent)
     set_main_layout_->addWidget(cb_hightlight_3d_, 2, 0);
     set_main_layout_->addWidget(cb_raw_, 3, 0);
     tab_main_->setLayout(set_main_layout_);
-    memset(&setup_info_, 0, sizeof(Setup_Info_s));
+    //memcpy(&setup_info_, setup_info, sizeof(Setup_Info_s));
+}
+
+void App_Setting::Set_Info_Parameter(Setup_Info_s *set_info)
+{
+    memcpy(&setup_info_, set_info, sizeof(Setup_Info_s));
 }
 
 void App_Setting::closeEvent(QCloseEvent *event)

@@ -36,8 +36,10 @@ void MainWindow::about()
 void MainWindow::setting()
 {
     int value;
+    Setup_Info_s setup_info = {0, 0, 0, 0, 0};
 
     App_Setting *setting = new App_Setting(this);
+    setting->Set_Info_Parameter(&setup_info);
     value = setting->exec();
     if(value)
     {

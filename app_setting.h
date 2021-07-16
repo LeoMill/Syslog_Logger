@@ -29,6 +29,7 @@ public:
     //App_Setting();
     explicit App_Setting(QWidget *parent = nullptr);
     ~App_Setting();
+    void Set_Info_Parameter(Setup_Info_s *set_info);
 
 private slots:
 
